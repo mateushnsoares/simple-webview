@@ -1,0 +1,37 @@
+{
+  "name": "learning_electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:all": "npm-run-all -p dist:*",
+    "dist:mac": "electron-builder --mac",
+    "dist:windows": "electron-builder --windows",
+    "dist:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "8.3.0",
+    "electron-builder": "^22.6.0",
+    "nodemon": "^2.0.4"
+  },
+  "build": {
+    "appId": "com.mateus.electron_webview",
+    "productName": "Electron WebView",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "category": "Utility",
+      "icon": "icon.png",
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ]
+    }
+  }
+}
